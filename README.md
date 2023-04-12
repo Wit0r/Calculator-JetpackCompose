@@ -4,8 +4,6 @@
 
  
  # App
- 
-My app is a calculator that allows users to perform basic math operations such as addition, subtraction, multiplication, and division. With Jetpack Compose, I was able to create a modern and visually appealing user interface that enhances the user experience.
 
 To use the app, simply clone or download the repository and run the app on an emulator or physical device. I hope you enjoy my project!
  
