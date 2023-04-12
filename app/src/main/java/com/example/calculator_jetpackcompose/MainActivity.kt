@@ -3,41 +3,22 @@ package com.example.calculator_jetpackcompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.activity.viewModels
+import com.example.calculator_jetpackcompose.presentation.calculator_screen.CalculatorScreen
+import com.example.calculator_jetpackcompose.presentation.calculator_screen.CalculatorViewModel
 import com.example.calculator_jetpackcompose.ui.theme.CalculatorJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
+
+    private val viewModel by viewModels<CalculatorViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             CalculatorJetpackComposeTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+                CalculatorScreen(viewModel = viewModel)
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    CalculatorJetpackComposeTheme {
-        Greeting("Android")
-    }
-}
